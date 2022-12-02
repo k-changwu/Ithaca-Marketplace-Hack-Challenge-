@@ -24,9 +24,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .systemMint
+        view.backgroundColor = .white
         
         title = "Profile"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit Profile", style: .plain, target: self, action: #selector(editProfile))
         
         var vivianListing1 = Listing(listingName: "Apple Airpods Pro", listingDescription: "new airpods", listingPrice: 200)
         var vivianListing2 = Listing(listingName: "Nike Air Force 1", listingDescription: "brand new never worn", listingPrice: 69.9)
@@ -106,6 +108,10 @@ class ViewController: UIViewController {
     @objc func addListing() {
         self.navigationController?.pushViewController(NewListingViewController(), animated: true)
     }
+    
+    @objc func editProfile() {
+        self.navigationController?.present(EditProfileViewController(delegate: self), animated: true)
+    }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
@@ -133,5 +139,15 @@ extension ViewController: UICollectionViewDataSource {
         }
         return UICollectionViewCell()
     }
+}
+
+extension ViewController: updateProfilePicDelegate{
+    func changeProfilePic(image: UIImage) {
+        print(image)
+        userImageView.image = image
+        
+    }
+    
+    
 }
 

@@ -17,6 +17,7 @@
 		E12412202933130D00B1E063 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124121F2933130D00B1E063 /* Listing.swift */; };
 		E141BF012939C9C00028D155 /* PushListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141BF002939C9C00028D155 /* PushListingViewController.swift */; };
 		E141BF032939CC710028D155 /* NewListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141BF022939CC710028D155 /* NewListingViewController.swift */; };
+		E141BF05293A8FE60028D155 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141BF04293A8FE60028D155 /* EditProfileViewController.swift */; };
 		E14AF8682933F57D00A4F56D /* ListingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14AF8672933F57C00A4F56D /* ListingCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		E124121F2933130D00B1E063 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		E141BF002939C9C00028D155 /* PushListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushListingViewController.swift; sourceTree = "<group>"; };
 		E141BF022939CC710028D155 /* NewListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListingViewController.swift; sourceTree = "<group>"; };
+		E141BF04293A8FE60028D155 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		E14AF8672933F57C00A4F56D /* ListingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 				E141BF002939C9C00028D155 /* PushListingViewController.swift */,
 				E124120B2930087B00B1E063 /* SceneDelegate.swift */,
 				E124120D2930087B00B1E063 /* ViewController.swift */,
+				E141BF04293A8FE60028D155 /* EditProfileViewController.swift */,
 				E124121D29300B1C00B1E063 /* User.swift */,
 				E124121F2933130D00B1E063 /* Listing.swift */,
 				E124120F2930087B00B1E063 /* Main.storyboard */,
@@ -161,6 +164,7 @@
 				E124120A2930087B00B1E063 /* AppDelegate.swift in Sources */,
 				E124120C2930087B00B1E063 /* SceneDelegate.swift in Sources */,
 				E141BF012939C9C00028D155 /* PushListingViewController.swift in Sources */,
+				E141BF05293A8FE60028D155 /* EditProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +240,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -290,7 +294,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

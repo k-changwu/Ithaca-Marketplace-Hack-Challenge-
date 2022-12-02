@@ -13,9 +13,8 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
     let descriptionLabel = UILabel()
     let titleTextField = UITextField()
     let descriptionTextView = UITextView()
-    var importedImage: UIImage!
     let importImageButton = UIButton()
-    
+    let submitButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,9 +65,17 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         importImageButton.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         view.addSubview(importImageButton)
         
+        submitButton.setTitle("Submit", for: .normal)
+        submitButton.layer.cornerRadius = 17
+        submitButton.backgroundColor = .systemBlue
+        submitButton.translatesAutoresizingMaskIntoConstraints = false
+        submitButton.clipsToBounds = true
+        view.addSubview(submitButton)
         
         setUpConstraints()
     }
+    
+    
     
     func setUpConstraints() {
         NSLayoutConstraint.activate([
@@ -97,7 +104,14 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
             descriptionTextView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10),
             descriptionTextView.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
             descriptionTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            descriptionTextView.heightAnchor.constraint(equalToConstant: 150)
+            descriptionTextView.heightAnchor.constraint(equalToConstant: 220)
+        ])
+        
+        NSLayoutConstraint.activate([
+            submitButton.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 30),
+            submitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            submitButton.widthAnchor.constraint(equalToConstant: (view.bounds.width / 2)),
+            submitButton.heightAnchor.constraint(equalToConstant: 50),
         ])
     }
     
@@ -112,8 +126,6 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         guard let image = info[.editedImage] as? UIImage else { return }
 
         dismiss(animated: true)
-
-        importedImage = image
         importImageButton.setImage(image, for: .normal)
     }
     

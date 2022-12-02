@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E124120A2930087B00B1E063 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12412092930087B00B1E063 /* AppDelegate.swift */; };
+		E124120C2930087B00B1E063 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124120B2930087B00B1E063 /* SceneDelegate.swift */; };
+		E124120E2930087B00B1E063 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124120D2930087B00B1E063 /* ViewController.swift */; };
+		E12412112930087B00B1E063 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E124120F2930087B00B1E063 /* Main.storyboard */; };
+		E12412132930087E00B1E063 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E12412122930087E00B1E063 /* Assets.xcassets */; };
+		E12412162930087E00B1E063 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E12412142930087E00B1E063 /* LaunchScreen.storyboard */; };
+		E124121E29300B1C00B1E063 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124121D29300B1C00B1E063 /* User.swift */; };
+		E12412202933130D00B1E063 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124121F2933130D00B1E063 /* Listing.swift */; };
+		E141BF012939C9C00028D155 /* PushListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141BF002939C9C00028D155 /* PushListingViewController.swift */; };
+		E141BF032939CC710028D155 /* NewListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141BF022939CC710028D155 /* NewListingViewController.swift */; };
+		E14AF8682933F57D00A4F56D /* ListingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14AF8672933F57C00A4F56D /* ListingCollectionViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E12412062930087B00B1E063 /* Ithaca Marketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ithaca Marketplace.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E12412092930087B00B1E063 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E124120B2930087B00B1E063 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E124120D2930087B00B1E063 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E12412102930087B00B1E063 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E12412122930087E00B1E063 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E12412152930087E00B1E063 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E12412172930087E00B1E063 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E124121D29300B1C00B1E063 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E124121F2933130D00B1E063 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
+		E141BF002939C9C00028D155 /* PushListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushListingViewController.swift; sourceTree = "<group>"; };
+		E141BF022939CC710028D155 /* NewListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListingViewController.swift; sourceTree = "<group>"; };
+		E14AF8672933F57C00A4F56D /* ListingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingCollectionViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E12412032930087B00B1E063 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E12411FD2930087B00B1E063 = {
+			isa = PBXGroup;
+			children = (
+				E12412082930087B00B1E063 /* Ithaca Marketplace */,
+				E12412072930087B00B1E063 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E12412072930087B00B1E063 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E12412062930087B00B1E063 /* Ithaca Marketplace.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E12412082930087B00B1E063 /* Ithaca Marketplace */ = {
+			isa = PBXGroup;
+			children = (
+				E12412092930087B00B1E063 /* AppDelegate.swift */,
+				E14AF8672933F57C00A4F56D /* ListingCollectionViewCell.swift */,
+				E141BF022939CC710028D155 /* NewListingViewController.swift */,
+				E141BF002939C9C00028D155 /* PushListingViewController.swift */,
+				E124120B2930087B00B1E063 /* SceneDelegate.swift */,
+				E124120D2930087B00B1E063 /* ViewController.swift */,
+				E124121D29300B1C00B1E063 /* User.swift */,
+				E124121F2933130D00B1E063 /* Listing.swift */,
+				E124120F2930087B00B1E063 /* Main.storyboard */,
+				E12412122930087E00B1E063 /* Assets.xcassets */,
+				E12412142930087E00B1E063 /* LaunchScreen.storyboard */,
+				E12412172930087E00B1E063 /* Info.plist */,
+			);
+			path = "Ithaca Marketplace";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E12412052930087B00B1E063 /* Ithaca Marketplace */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E124121A2930087E00B1E063 /* Build configuration list for PBXNativeTarget "Ithaca Marketplace" */;
+			buildPhases = (
+				E12412022930087B00B1E063 /* Sources */,
+				E12412032930087B00B1E063 /* Frameworks */,
+				E12412042930087B00B1E063 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ithaca Marketplace";
+			productName = "Cornell Marketplace";
+			productReference = E12412062930087B00B1E063 /* Ithaca Marketplace.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E12411FE2930087B00B1E063 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					E12412052930087B00B1E063 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = E12412012930087B00B1E063 /* Build configuration list for PBXProject "Ithaca Marketplace" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E12411FD2930087B00B1E063;
+			productRefGroup = E12412072930087B00B1E063 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E12412052930087B00B1E063 /* Ithaca Marketplace */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E12412042930087B00B1E063 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E12412162930087E00B1E063 /* LaunchScreen.storyboard in Resources */,
+				E12412132930087E00B1E063 /* Assets.xcassets in Resources */,
+				E12412112930087B00B1E063 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E12412022930087B00B1E063 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E124121E29300B1C00B1E063 /* User.swift in Sources */,
+				E124120E2930087B00B1E063 /* ViewController.swift in Sources */,
+				E12412202933130D00B1E063 /* Listing.swift in Sources */,
+				E14AF8682933F57D00A4F56D /* ListingCollectionViewCell.swift in Sources */,
+				E141BF032939CC710028D155 /* NewListingViewController.swift in Sources */,
+				E124120A2930087B00B1E063 /* AppDelegate.swift in Sources */,
+				E124120C2930087B00B1E063 /* SceneDelegate.swift in Sources */,
+				E141BF012939C9C00028D155 /* PushListingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E124120F2930087B00B1E063 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E12412102930087B00B1E063 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E12412142930087E00B1E063 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E12412152930087E00B1E063 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E12412182930087E00B1E063 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E12412192930087E00B1E063 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E124121B2930087E00B1E063 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XAP873XY3D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Ithaca Marketplace/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vivianzhao.Ithaca-Marketplace";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E124121C2930087E00B1E063 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XAP873XY3D;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Ithaca Marketplace/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vivianzhao.Ithaca-Marketplace";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E12412012930087B00B1E063 /* Build configuration list for PBXProject "Ithaca Marketplace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E12412182930087E00B1E063 /* Debug */,
+				E12412192930087E00B1E063 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E124121A2930087E00B1E063 /* Build configuration list for PBXNativeTarget "Ithaca Marketplace" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E124121B2930087E00B1E063 /* Debug */,
+				E124121C2930087E00B1E063 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E12411FE2930087B00B1E063 /* Project object */;
+}

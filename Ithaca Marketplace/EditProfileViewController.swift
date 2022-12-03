@@ -15,9 +15,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     var importedImage = UIImage()
     let nameTextField = UITextField()
     
-    weak var delegate: updateProfilePicDelegate?
+    weak var delegate: updateProfileDelegate?
     
-    init(delegate: updateProfilePicDelegate? = nil) {
+    init(delegate: updateProfileDelegate? = nil) {
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
@@ -70,7 +70,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         dismiss(animated: true, completion: nil)
         self.navigationController?.popViewController(animated: true)
         delegate?.changeProfilePic(image: importedImage)
-        print(importedImage)
+        delegate?.changeName(name: nameTextField.text!)
     }
     
     func setUpConstraints() {
@@ -106,15 +106,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
-        print(importedImage)
         importedImage = image
-        print(importedImage)
-
         dismiss(animated: true)
         importImageButton.setImage(image, for: .normal)
     }
 }
 
-protocol updateProfilePicDelegate: UIViewController{
+protocol updateProfileDelegate: UIViewController{
     func changeProfilePic(image: UIImage)
+    func changeName(name: String)
 }

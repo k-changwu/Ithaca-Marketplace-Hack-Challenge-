@@ -15,7 +15,10 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
     let descriptionTextView = UITextView()
     let importImageButton = UIButton()
     let submitButton = UIButton()
-
+    let dollarLabel = UILabel()
+    let priceLabel = UILabel()
+    let priceTextField = UITextField()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +27,7 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         
         
         titleLabel.text = "Title"
-        titleLabel.textColor = .systemGray
+        titleLabel.textColor = .black
         titleLabel.font = .systemFont(ofSize: 17, weight: .semibold)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
@@ -38,9 +41,30 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         titleTextField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleTextField)
         
+        dollarLabel.text = "$"
+        dollarLabel.font = .systemFont(ofSize: 24, weight: .regular)
+        dollarLabel.textColor = .lightGray
+        dollarLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(dollarLabel)
+        
+        priceLabel.textColor = .black
+        priceLabel.text = "Price"
+        priceLabel.textColor = .black
+        priceLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(priceLabel)
+        
+        priceTextField.text = nil
+        priceTextField.font = .systemFont(ofSize: 17, weight: .medium)
+        priceTextField.borderStyle = .roundedRect
+        priceTextField.layer.borderColor = UIColor.lightGray.cgColor
+        priceTextField.layer.borderWidth = 1
+        priceTextField.layer.cornerRadius = 5
+        priceTextField.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(priceTextField)
         
         descriptionLabel.text = "Description"
-        descriptionLabel.textColor = .systemGray
+        descriptionLabel.textColor = .black
         descriptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(descriptionLabel)
@@ -62,7 +86,7 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         importImageButton.setImage(UIImage(named:"uploadbutton"), for: .normal)
         importImageButton.addTarget(self, action: #selector(importPicture), for: .touchUpInside)
         importImageButton.translatesAutoresizingMaskIntoConstraints = false
-        importImageButton.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        importImageButton.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         view.addSubview(importImageButton)
         
         submitButton.setTitle("Submit", for: .normal)
@@ -79,32 +103,48 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
     
     func setUpConstraints() {
         NSLayoutConstraint.activate([
-            importImageButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            importImageButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             importImageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             importImageButton.heightAnchor.constraint(equalToConstant: 270),
             importImageButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 60)
         ])
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: importImageButton.bottomAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: importImageButton.bottomAnchor, constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15)
         ])
         
         NSLayoutConstraint.activate([
             titleTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             titleTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            titleTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            titleTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
         ])
         
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 20),
+            priceLabel.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 10),
+            priceLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15)
+        ])
+        
+        NSLayoutConstraint.activate([
+            dollarLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 12),
+            dollarLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15)
+        ])
+        
+        NSLayoutConstraint.activate([
+            priceTextField.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 10),
+            priceTextField.leadingAnchor.constraint(equalTo: dollarLabel.trailingAnchor, constant: 5),
+            priceTextField.widthAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        NSLayoutConstraint.activate([
+            descriptionLabel.topAnchor.constraint(equalTo: priceTextField.bottomAnchor, constant: 10),
             descriptionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15)
         ])
         
         NSLayoutConstraint.activate([
             descriptionTextView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10),
             descriptionTextView.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
-            descriptionTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            descriptionTextView.heightAnchor.constraint(equalToConstant: 220)
+            descriptionTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            descriptionTextView.heightAnchor.constraint(equalToConstant: 170)
         ])
         
         NSLayoutConstraint.activate([

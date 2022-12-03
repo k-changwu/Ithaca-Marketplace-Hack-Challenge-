@@ -46,11 +46,15 @@ class ViewController: UIViewController {
         
         
         userNameLabel.text = vivian.userName
+        userNameLabel.font = .systemFont(ofSize: 22, weight: .semibold)
         userNameLabel.textAlignment = .center
         userNameLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(userNameLabel)
         
         userImageView.image = UIImage(named: vivian.userImageName)
+//        userImageView.frame = CGRectMake(0, 0, 120, 120)
+        userImageView.layer.cornerRadius = 75
+        userImageView.clipsToBounds = true
         userImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(userImageView)
         
@@ -141,13 +145,12 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-extension ViewController: updateProfilePicDelegate{
+extension ViewController: updateProfileDelegate{
     func changeProfilePic(image: UIImage) {
-        print(image)
         userImageView.image = image
-        
     }
-    
-    
+    func changeName(name: String) {
+        userNameLabel.text = name
+    } 
 }
 

@@ -30,31 +30,17 @@ def failure_response(message, code=404):
     return json.dumps({"error": message}), code   
 
 
-# your routes here
-"""
-Upload pfp
-Upload item image
-get all users
-get user by id
-create user
-update user
-delete user
-delete user
-get all items
-get all items from a user
-get an item by id
-create an item
-update an item
-delete an item
-"""
+# Our routes below
 
 @app.route("/")
 def null():
     """
-    Endpoint that does nothing
+    Endpoint that greets the graders!
     """
 
-    return "", 200
+    return "Hello graders!\n\
+        This is the backend for our marketplace application.\n\
+            We hope you like it, and be kind!", 200
 
 @app.route("/upload/users/<int:user_id>/", methods=["POST"])
 def upload_pfp(user_id):

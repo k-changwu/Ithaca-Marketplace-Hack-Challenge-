@@ -110,7 +110,7 @@ class UserAsset(db.Model):
 
     def serialize(self):
         """
-        Serializes an Asset object.
+        Serializes a UserAsset object.
         """
         return {
             "url": f"{self.base_url}/{self.salt}.{self.extension}",
@@ -200,7 +200,7 @@ class ItemAsset(db.Model):
 
     def serialize(self):
         """
-        Serializes an Asset object.
+        Serializes an ItemAsset object.
         """
         return {
             "url": f"{self.base_url}/{self.salt}.{self.extension}",
@@ -242,7 +242,8 @@ class User(db.Model):
             "id":self.id,
             "name": self.name,
             "description":self.description,
-            "items": [x.serialize() for x in self.items]
+            "items": [x.serialize() for x in self.items],
+            
         }
 
     def item_serialize(self):

@@ -114,7 +114,7 @@ class PushListingViewController: UIViewController, UIImagePickerControllerDelega
         dismiss(animated: true, completion: nil)
         self.navigationController?.popViewController(animated: true)
         delegate?.updateName(name: titleTextField.text!)
-        delegate?.updatePrice(price: Double(priceTextField))
+        delegate?.updatePrice(price: Double(priceTextField.text!) ?? 0)
         delegate?.updateDescription(description: descriptionTextView.text!)
     }
     

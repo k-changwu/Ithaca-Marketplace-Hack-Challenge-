@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewListingViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class NewListingViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let titleLabel = UILabel()
     let descriptionLabel = UILabel()
@@ -20,19 +20,20 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
     let priceTextField = UITextField()
     
     weak var delegate: CreateListingDelegate?
-      
-      init(delegate: CreateListingDelegate) {
-          self.delegate = delegate
-          super.init(nibName: nil, bundle: nil)
-      }
-      
-      required init?(coder: NSCoder) {
-          fatalError("init(coder:) has not been implemented")
-      }
-
+    
+    init(delegate: CreateListingDelegate) {
+        self.delegate = delegate
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "Add Listing"
         view.backgroundColor = .white
         
@@ -113,14 +114,14 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         dollarLabel.textColor = .lightGray
         dollarLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dollarLabel)
-                
+        
         priceLabel.textColor = .black
         priceLabel.text = "Price"
         priceLabel.textColor = .black
         priceLabel.font = .systemFont(ofSize: 17, weight: .semibold)
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(priceLabel)
-                
+        
         priceTextField.text = nil
         priceTextField.font = .systemFont(ofSize: 17, weight: .medium)
         priceTextField.borderStyle = .roundedRect
@@ -131,18 +132,23 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         view.addSubview(priceTextField)
         setUpConstraints()
     }
+    
     @objc func saveAction(){
         print("saving attempt!!")
         let title = titleTextField.text!
         let description = descriptionTextView.text!
         let price = Double(priceTextField.text!) ?? 0
-
+        
         delegate?.createListing(listingName: title, listingDescription: description, listingPrice: price)
-
+        
         navigationController?.popViewController(animated: true)
-        }
-
-    
+    }
+    @objc func importPicture() {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
+    }
     
     func setUpConstraints() {
         NSLayoutConstraint.activate([
@@ -198,24 +204,18 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         ])
     }
     
-    @objc func importPicture() {
-        let picker = UIImagePickerController()
-        picker.allowsEditing = true
-        picker.delegate = self
-        present(picker, animated: true)
-    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
-
+        
         dismiss(animated: true)
         importImageButton.setImage(image, for: .normal)
     }
     
-    
-    
-    
+    func createPost() {
+        delegate?.createListing(listingName: titleTextField.text!, listingDescription: descriptionTextView.text, listingPrice: Double(priceTextField.text!) ?? 0)
+    }
 }
-protocol CreateListingDelegate : UIViewController {
+protocol CreateListingDelegate: UIViewController {
     func createListing(listingName: String, listingDescription: String, listingPrice: Double)
 }

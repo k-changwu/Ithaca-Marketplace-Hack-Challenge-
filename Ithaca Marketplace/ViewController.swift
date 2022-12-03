@@ -138,32 +138,32 @@ class ViewController: UIViewController {
     }
 }
     
-    extension ViewController: UICollectionViewDelegateFlowLayout {
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let size = (collectionView.frame.width - 10) / 2.0
-            return CGSize(width: size, height: size + 30)
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = (collectionView.frame.width - 10) / 2.0
+        return CGSize(width: size, height: size + 30)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(PushListingViewController(), animated: true)
+    }
+}
+    
+extension ViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if (collectionView == listingCollectionView) {
+            return vivianListing.count
         }
-        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            self.navigationController?.pushViewController(PushListingViewController(), animated: true)
-        }
+        return 0
     }
     
-    extension ViewController: UICollectionViewDataSource {
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            if (collectionView == listingCollectionView) {
-                return vivianListing.count
-            }
-            return 0
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listingReuseIdentifier, for: indexPath) as? ListingCollectionViewCell {
+            cell.configure(listing: vivianListing[indexPath.row])
+            return cell
         }
-        
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listingReuseIdentifier, for: indexPath) as? ListingCollectionViewCell {
-                cell.configure(listing: vivianListing[indexPath.row])
-                return cell
-            }
-            return UICollectionViewCell()
-        }
+        return UICollectionViewCell()
     }
+}
 
 
 extension ViewController: updateProfileDelegate{
@@ -175,22 +175,8 @@ extension ViewController: updateProfileDelegate{
     } 
 }
 
-extension ViewController: updateListingDelegate {
-    func updateName(name: String) {
-        <#code#>
-    }
-    
-    func updatePrice(price: Double) {
-        <#code#>
-    }
-    
-    func updateDescription(description: String) {
-        <#code#>
-    }
-    
-    
-}
-extension ViewController: CreateListingDelegate{
+
+extension ViewController: CreateListingDelegate {
     func createListing(listingName: String, listingDescription: String, listingPrice: Double) {
         NetworkManager.createListing(listingName: listingName, listingDescription: listingDescription, listingPrice: listingPrice) {listing in
             self.shownVivianData = [listing] + self.shownVivianData

@@ -82,8 +82,6 @@ class ViewController: UIViewController {
         view.addSubview(addListingButton)
         
         setUpConstraints()
-        
-        
     }
     
     func setUpConstraints() {
@@ -137,33 +135,36 @@ class ViewController: UIViewController {
         
     }
 }
-    
+
 extension ViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = (collectionView.frame.width - 10) / 2.0
-        return CGSize(width: size, height: size + 30)
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(PushListingViewController(), animated: true)
-    }
-}
-    
-extension ViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if (collectionView == listingCollectionView) {
-            return vivianListing.count
-        }
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listingReuseIdentifier, for: indexPath) as? ListingCollectionViewCell {
-            cell.configure(listing: vivianListing[indexPath.row])
-            return cell
-        }
-        return UICollectionViewCell()
-    }
-}
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+         let size = (collectionView.frame.width - 10) / 2.0
+         return CGSize(width: size, height: size + 30)
+     }
+     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         let cell = listingCollectionView.cellForItem(at: indexPath) as! ListingCollectionViewCell
+         self.navigationController?.pushViewController(PushListingViewController(listing: vivianListing[indexPath.row], delegate: cell), animated: true)
+         
+     }
+ }
+ 
+ extension ViewController: UICollectionViewDataSource {
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+         if (collectionView == listingCollectionView) {
+             return vivianListing.count
+         }
+         return 0
+     }
+     
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listingReuseIdentifier, for: indexPath) as? ListingCollectionViewCell {
+             cell.configure(listing: vivianListing[indexPath.row])
+             return cell
+         }else{
+             return UICollectionViewCell()
+         }
+     }
+ }
 
 
 extension ViewController: updateProfileDelegate{
@@ -176,7 +177,7 @@ extension ViewController: updateProfileDelegate{
 }
 
 
-extension ViewController: CreateListingDelegate {
+extension ViewController: CreateListingDelegate{
     func createListing(listingName: String, listingDescription: String, listingPrice: Double) {
         NetworkManager.createListing(listingName: listingName, listingDescription: listingDescription, listingPrice: listingPrice) {listing in
             self.shownVivianData = [listing] + self.shownVivianData
@@ -185,3 +186,4 @@ extension ViewController: CreateListingDelegate {
         }
     }
 }
+

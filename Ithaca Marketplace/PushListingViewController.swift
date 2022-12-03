@@ -18,9 +18,13 @@ class PushListingViewController: UIViewController, UIImagePickerControllerDelega
     let dollarLabel = UILabel()
     let priceLabel = UILabel()
     let priceTextField = UITextField()
+    var importedImage = UIImage()
     
+    let listing: Listing
     weak var delegate: updateListingDelegate?
-    init(delegate: updateListingDelegate? = nil) {
+    
+    init(listing: Listing, delegate: updateListingDelegate? = nil) {
+        self.listing = listing
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
@@ -115,7 +119,7 @@ class PushListingViewController: UIViewController, UIImagePickerControllerDelega
         self.navigationController?.popViewController(animated: true)
         delegate?.updateName(name: titleTextField.text!)
         delegate?.updatePrice(price: Double(priceTextField.text!) ?? 0)
-        delegate?.updateDescription(description: descriptionTextView.text!)
+        delegate?.updateListingPic(image: importedImage)
     }
     
     func setUpConstraints() {
@@ -181,14 +185,16 @@ class PushListingViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
+        importedImage = image
 
         dismiss(animated: true)
         importImageButton.setImage(image, for: .normal)
     }
 }
 
-protocol updateListingDelegate: UIViewController {
+protocol updateListingDelegate: UICollectionViewCell{
     func updateName(name: String)
     func updatePrice(price: Double)
-    func updateDescription(description: String)
+    func updateListingPic(image: UIImage)
+    //func updateDescription(description: String)
 }

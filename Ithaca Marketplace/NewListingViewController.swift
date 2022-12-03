@@ -134,9 +134,9 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @objc func saveAction(){
-        print("saving attempt!!")
         let title = titleTextField.text!
         let description = descriptionTextView.text!
+        
         let price = Double(priceTextField.text!) ?? 0
         
         delegate?.createListing(listingName: title, listingDescription: description, listingPrice: price)

@@ -144,7 +144,9 @@ class ViewController: UIViewController {
             return CGSize(width: size, height: size + 30)
         }
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            self.navigationController?.pushViewController(PushListingViewController(), animated: true)
+            let cell = listingCollectionView.cellForItem(at: indexPath) as! ListingCollectionViewCell
+            self.navigationController?.pushViewController(PushListingViewController(listing: vivianListing[indexPath.row], delegate: cell), animated: true)
+            
         }
     }
     
@@ -160,8 +162,9 @@ class ViewController: UIViewController {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: listingReuseIdentifier, for: indexPath) as? ListingCollectionViewCell {
                 cell.configure(listing: vivianListing[indexPath.row])
                 return cell
+            }else{
+                return UICollectionViewCell()
             }
-            return UICollectionViewCell()
         }
     }
 
@@ -175,21 +178,9 @@ extension ViewController: updateProfileDelegate{
     } 
 }
 
-extension ViewController: updateListingDelegate {
-    func updateName(name: String) {
-        <#code#>
-    }
-    
-    func updatePrice(price: Double) {
-        <#code#>
-    }
-    
-    func updateDescription(description: String) {
-        <#code#>
-    }
-    
-    
-}
+
+
+
 extension ViewController: CreateListingDelegate{
     func createListing(listingName: String, listingDescription: String, listingPrice: Double) {
         NetworkManager.createListing(listingName: listingName, listingDescription: listingDescription, listingPrice: listingPrice) {listing in

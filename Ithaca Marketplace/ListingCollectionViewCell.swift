@@ -85,4 +85,21 @@ class ListingCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+//    override func setSelected(_ selected: Bool, animated: Bool){
+//        super.setSelected(selected, animated: animated)
+//    }
+    
+    
+}
+
+extension ListingCollectionViewCell: updateListingDelegate {
+    func updateName(name: String) {
+        listingNameLabel.text = name
+        
+    }
+    
+    func updatePrice(price: Double) {
+        listingPriceLabel.text = String(price)
+    }
+    
 }

@@ -19,8 +19,11 @@ class PushListingViewController: UIViewController, UIImagePickerControllerDelega
     let priceLabel = UILabel()
     let priceTextField = UITextField()
     
+    let listing: Listing
     weak var delegate: updateListingDelegate?
-    init(delegate: updateListingDelegate? = nil) {
+    
+    init(listing: Listing, delegate: updateListingDelegate? = nil) {
+        self.listing = listing
         self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
@@ -114,8 +117,8 @@ class PushListingViewController: UIViewController, UIImagePickerControllerDelega
         dismiss(animated: true, completion: nil)
         self.navigationController?.popViewController(animated: true)
         delegate?.updateName(name: titleTextField.text!)
-        delegate?.updatePrice(price: Double(priceTextField))
-        delegate?.updateDescription(description: descriptionTextView.text!)
+        delegate?.updatePrice(price: Double(priceTextField.text!) ?? 0)
+        //delegate?.updateDescription(description: descriptionTextView.text!)
     }
     
     func setUpConstraints() {
@@ -187,8 +190,8 @@ class PushListingViewController: UIViewController, UIImagePickerControllerDelega
     }
 }
 
-protocol updateListingDelegate: UIViewController {
+protocol updateListingDelegate: UICollectionViewCell{
     func updateName(name: String)
     func updatePrice(price: Double)
-    func updateDescription(description: String)
+    //func updateDescription(description: String)
 }

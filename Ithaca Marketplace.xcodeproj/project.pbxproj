@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3DB974AE0B5D845867D936BC /* Pods_Ithaca_Marketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E4DDD4BD21D1E28C422859 /* Pods_Ithaca_Marketplace.framework */; };
+		49688FFB293AED1700BC6970 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49688FFA293AED1700BC6970 /* NetworkManager.swift */; };
 		E124120A2930087B00B1E063 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12412092930087B00B1E063 /* AppDelegate.swift */; };
 		E124120C2930087B00B1E063 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124120B2930087B00B1E063 /* SceneDelegate.swift */; };
 		E124120E2930087B00B1E063 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124120D2930087B00B1E063 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		01E4DDD4BD21D1E28C422859 /* Pods_Ithaca_Marketplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ithaca_Marketplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49688FFA293AED1700BC6970 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		892CDEEC8C1A82839AD20C97 /* Pods-Ithaca Marketplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ithaca Marketplace.release.xcconfig"; path = "Target Support Files/Pods-Ithaca Marketplace/Pods-Ithaca Marketplace.release.xcconfig"; sourceTree = "<group>"; };
 		B15C211133D3DF11AEF89906 /* Pods-Ithaca Marketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ithaca Marketplace.debug.xcconfig"; path = "Target Support Files/Pods-Ithaca Marketplace/Pods-Ithaca Marketplace.debug.xcconfig"; sourceTree = "<group>"; };
 		E12412062930087B00B1E063 /* Ithaca Marketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ithaca Marketplace.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,7 +70,6 @@
 				B15C211133D3DF11AEF89906 /* Pods-Ithaca Marketplace.debug.xcconfig */,
 				892CDEEC8C1A82839AD20C97 /* Pods-Ithaca Marketplace.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -100,6 +101,7 @@
 				E124120B2930087B00B1E063 /* SceneDelegate.swift */,
 				E124120D2930087B00B1E063 /* ViewController.swift */,
 				E141BF04293A8FE60028D155 /* EditProfileViewController.swift */,
+				49688FFA293AED1700BC6970 /* NetworkManager.swift */,
 				E124121D29300B1C00B1E063 /* User.swift */,
 				E124121F2933130D00B1E063 /* Listing.swift */,
 				E124120F2930087B00B1E063 /* Main.storyboard */,
@@ -227,6 +229,7 @@
 			files = (
 				E124121E29300B1C00B1E063 /* User.swift in Sources */,
 				E124120E2930087B00B1E063 /* ViewController.swift in Sources */,
+				49688FFB293AED1700BC6970 /* NetworkManager.swift in Sources */,
 				E12412202933130D00B1E063 /* Listing.swift in Sources */,
 				E14AF8682933F57D00A4F56D /* ListingCollectionViewCell.swift in Sources */,
 				E141BF032939CC710028D155 /* NewListingViewController.swift in Sources */,

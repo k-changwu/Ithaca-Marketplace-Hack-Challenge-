@@ -67,7 +67,6 @@ class PushListingViewController: UIViewController, UIImagePickerControllerDelega
         priceTextField.text = nil
         priceTextField.font = .systemFont(ofSize: 17, weight: .medium)
         priceTextField.borderStyle = .roundedRect
-        priceTextField.
         priceTextField.layer.borderColor = UIColor.lightGray.cgColor
         priceTextField.layer.borderWidth = 1
         priceTextField.layer.cornerRadius = 5

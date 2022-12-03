@@ -19,6 +19,17 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
     let priceLabel = UILabel()
     let priceTextField = UITextField()
     
+    weak var delegate: CreateListingDelegate?
+      
+      init(delegate: CreateListingDelegate) {
+          self.delegate = delegate
+          super.init(nibName: nil, bundle: nil)
+      }
+      
+      required init?(coder: NSCoder) {
+          fatalError("init(coder:) has not been implemented")
+      }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +38,7 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         
         
         titleLabel.text = "Title"
-        titleLabel.textColor = .black
+        titleLabel.textColor = .systemGray
         titleLabel.font = .systemFont(ofSize: 17, weight: .semibold)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
@@ -41,30 +52,9 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         titleTextField.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleTextField)
         
-        dollarLabel.text = "$"
-        dollarLabel.font = .systemFont(ofSize: 24, weight: .regular)
-        dollarLabel.textColor = .lightGray
-        dollarLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(dollarLabel)
-        
-        priceLabel.textColor = .black
-        priceLabel.text = "Price"
-        priceLabel.textColor = .black
-        priceLabel.font = .systemFont(ofSize: 17, weight: .semibold)
-        priceLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(priceLabel)
-        
-        priceTextField.text = nil
-        priceTextField.font = .systemFont(ofSize: 17, weight: .medium)
-        priceTextField.borderStyle = .roundedRect
-        priceTextField.layer.borderColor = UIColor.lightGray.cgColor
-        priceTextField.layer.borderWidth = 1
-        priceTextField.layer.cornerRadius = 5
-        priceTextField.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(priceTextField)
         
         descriptionLabel.text = "Description"
-        descriptionLabel.textColor = .black
+        descriptionLabel.textColor = .systemGray
         descriptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(descriptionLabel)
@@ -86,19 +76,50 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         importImageButton.setImage(UIImage(named:"uploadbutton"), for: .normal)
         importImageButton.addTarget(self, action: #selector(importPicture), for: .touchUpInside)
         importImageButton.translatesAutoresizingMaskIntoConstraints = false
-        importImageButton.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        importImageButton.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         view.addSubview(importImageButton)
         
         submitButton.setTitle("Submit", for: .normal)
+        submitButton.addTarget(self, action: #selector(saveAction), for: .touchUpInside)
         submitButton.layer.cornerRadius = 17
         submitButton.backgroundColor = .systemBlue
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         submitButton.clipsToBounds = true
         view.addSubview(submitButton)
         
+        dollarLabel.text = "$"
+        dollarLabel.font = .systemFont(ofSize: 20, weight: .regular)
+        dollarLabel.textColor = .lightGray
+        dollarLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(dollarLabel)
+                
+        priceLabel.textColor = .black
+        priceLabel.text = "Price"
+        priceLabel.textColor = .black
+        priceLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(priceLabel)
+                
+        priceTextField.text = nil
+        priceTextField.font = .systemFont(ofSize: 17, weight: .medium)
+        priceTextField.borderStyle = .roundedRect
+        priceTextField.layer.borderColor = UIColor.lightGray.cgColor
+        priceTextField.layer.borderWidth = 1
+        priceTextField.layer.cornerRadius = 5
+        priceTextField.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(priceTextField)
         setUpConstraints()
     }
-    
+    @objc func saveAction(){
+            let title = titleTextField.text!
+            let description = descriptionTextView.text!
+            let price = Double(priceTextField.text!) ?? 0
+
+            delegate?.createListing(listingName: title, listingDescription: description, listingPrice: price)
+
+            navigationController?.popViewController(animated: true)
+        }
+
     
     
     func setUpConstraints() {
@@ -116,7 +137,7 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         NSLayoutConstraint.activate([
             titleTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             titleTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            titleTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            titleTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
         ])
         
         NSLayoutConstraint.activate([
@@ -125,7 +146,7 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         ])
         
         NSLayoutConstraint.activate([
-            dollarLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 12),
+            dollarLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 15),
             dollarLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15)
         ])
         
@@ -143,7 +164,7 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         NSLayoutConstraint.activate([
             descriptionTextView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10),
             descriptionTextView.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
-            descriptionTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            descriptionTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
             descriptionTextView.heightAnchor.constraint(equalToConstant: 170)
         ])
         
@@ -172,4 +193,7 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
     
     
     
+}
+protocol CreateListingDelegate : UIViewController {
+    func createListing(listingName: String, listingDescription: String, listingPrice: Double)
 }

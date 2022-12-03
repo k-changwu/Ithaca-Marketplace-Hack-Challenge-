@@ -8,16 +8,14 @@
 import UIKit
 import Foundation
 
-class Listing: NSObject {
+struct Listing: Codable{
     var listingName: String
     var listingDescription: String
     var listingPrice: Double
-    
-    required init(listingName: String, listingDescription: String, listingPrice: Double) {
-        self.listingName = listingName
-        self.listingDescription = listingDescription
-        self.listingPrice = listingPrice
-    }
-    
-    
 }
+
+struct ListingResponse: Codable {
+    let success: Bool
+    let data: [Listing]
+}
+

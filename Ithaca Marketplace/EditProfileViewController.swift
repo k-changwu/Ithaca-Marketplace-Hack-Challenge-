@@ -116,3 +116,4 @@ protocol updateProfileDelegate: UIViewController{
     func changeProfilePic(image: UIImage)
     func changeName(name: String)
 }
+

@@ -42,7 +42,7 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         view.addSubview(titleTextField)
         
         dollarLabel.text = "$"
-        dollarLabel.font = .systemFont(ofSize: 24, weight: .regular)
+        dollarLabel.font = .systemFont(ofSize: 20, weight: .regular)
         dollarLabel.textColor = .lightGray
         dollarLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(dollarLabel)
@@ -116,7 +116,7 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         NSLayoutConstraint.activate([
             titleTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             titleTextField.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            titleTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            titleTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
         ])
         
         NSLayoutConstraint.activate([
@@ -125,7 +125,7 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         ])
         
         NSLayoutConstraint.activate([
-            dollarLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 12),
+            dollarLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 15),
             dollarLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15)
         ])
         
@@ -143,7 +143,7 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         NSLayoutConstraint.activate([
             descriptionTextView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10),
             descriptionTextView.leadingAnchor.constraint(equalTo: descriptionLabel.leadingAnchor),
-            descriptionTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            descriptionTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
             descriptionTextView.heightAnchor.constraint(equalToConstant: 170)
         ])
         

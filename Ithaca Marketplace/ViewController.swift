@@ -154,3 +154,6 @@ extension ViewController: updateProfileDelegate{
     } 
 }
 
+extension ViewController: updateListingDelegate {
+    
+}

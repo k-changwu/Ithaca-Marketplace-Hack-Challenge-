@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DB974AE0B5D845867D936BC /* Pods_Ithaca_Marketplace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E4DDD4BD21D1E28C422859 /* Pods_Ithaca_Marketplace.framework */; };
 		E124120A2930087B00B1E063 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12412092930087B00B1E063 /* AppDelegate.swift */; };
 		E124120C2930087B00B1E063 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124120B2930087B00B1E063 /* SceneDelegate.swift */; };
 		E124120E2930087B00B1E063 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E124120D2930087B00B1E063 /* ViewController.swift */; };
@@ -22,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01E4DDD4BD21D1E28C422859 /* Pods_Ithaca_Marketplace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ithaca_Marketplace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		892CDEEC8C1A82839AD20C97 /* Pods-Ithaca Marketplace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ithaca Marketplace.release.xcconfig"; path = "Target Support Files/Pods-Ithaca Marketplace/Pods-Ithaca Marketplace.release.xcconfig"; sourceTree = "<group>"; };
+		B15C211133D3DF11AEF89906 /* Pods-Ithaca Marketplace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ithaca Marketplace.debug.xcconfig"; path = "Target Support Files/Pods-Ithaca Marketplace/Pods-Ithaca Marketplace.debug.xcconfig"; sourceTree = "<group>"; };
 		E12412062930087B00B1E063 /* Ithaca Marketplace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ithaca Marketplace.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12412092930087B00B1E063 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E124120B2930087B00B1E063 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,17 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DB974AE0B5D845867D936BC /* Pods_Ithaca_Marketplace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15796C2AE9CCFB836D5A2ED6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01E4DDD4BD21D1E28C422859 /* Pods_Ithaca_Marketplace.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B7D0B6C1A9ACC1CFC6FF0DF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B15C211133D3DF11AEF89906 /* Pods-Ithaca Marketplace.debug.xcconfig */,
+				892CDEEC8C1A82839AD20C97 /* Pods-Ithaca Marketplace.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E12411FD2930087B00B1E063 = {
 			isa = PBXGroup;
 			children = (
 				E12412082930087B00B1E063 /* Ithaca Marketplace */,
 				E12412072930087B00B1E063 /* Products */,
+				B7D0B6C1A9ACC1CFC6FF0DF0 /* Pods */,
+				15796C2AE9CCFB836D5A2ED6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,9 +117,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E124121A2930087E00B1E063 /* Build configuration list for PBXNativeTarget "Ithaca Marketplace" */;
 			buildPhases = (
+				6609288F08BB1F09AEEA4349 /* [CP] Check Pods Manifest.lock */,
 				E12412022930087B00B1E063 /* Sources */,
 				E12412032930087B00B1E063 /* Frameworks */,
 				E12412042930087B00B1E063 /* Resources */,
+				8528D8211D82C040C066528D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -150,6 +177,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6609288F08BB1F09AEEA4349 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ithaca Marketplace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8528D8211D82C040C066528D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ithaca Marketplace/Pods-Ithaca Marketplace-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ithaca Marketplace/Pods-Ithaca Marketplace-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ithaca Marketplace/Pods-Ithaca Marketplace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E12412022930087B00B1E063 /* Sources */ = {
@@ -306,6 +375,7 @@
 		};
 		E124121B2930087E00B1E063 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B15C211133D3DF11AEF89906 /* Pods-Ithaca Marketplace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -334,6 +404,7 @@
 		};
 		E124121C2930087E00B1E063 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 892CDEEC8C1A82839AD20C97 /* Pods-Ithaca Marketplace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

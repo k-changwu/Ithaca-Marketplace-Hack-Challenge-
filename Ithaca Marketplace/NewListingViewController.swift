@@ -111,13 +111,14 @@ class NewListingViewController: UIViewController, UIImagePickerControllerDelegat
         setUpConstraints()
     }
     @objc func saveAction(){
-            let title = titleTextField.text!
-            let description = descriptionTextView.text!
-            let price = Double(priceTextField.text!) ?? 0
+        print("saving attempt!!")
+        let title = titleTextField.text!
+        let description = descriptionTextView.text!
+        let price = Double(priceTextField.text!) ?? 0
 
-            delegate?.createListing(listingName: title, listingDescription: description, listingPrice: price)
+        delegate?.createListing(listingName: title, listingDescription: description, listingPrice: price)
 
-            navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
         }
 
     

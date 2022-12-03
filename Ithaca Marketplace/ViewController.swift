@@ -125,8 +125,10 @@ class ViewController: UIViewController {
             self.shownVivianData = self.vivianListing
             self.listingCollectionView.reloadData()
         }
+        //NetworkManager.createUser(userName: "Vivan", description: "123-456-7890", completion: user -> )
+        
     }
-    
+        
     @objc func refreshData(){
         NetworkManager.getAllListings { listings in
             self.vivianListing = listings

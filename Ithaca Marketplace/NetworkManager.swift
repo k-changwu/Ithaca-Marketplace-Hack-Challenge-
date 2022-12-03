@@ -56,4 +56,25 @@ class NetworkManager {
         
         
     }
+    
+    static func createUser(userName: String, description: String, completion: @escaping (User) -> Void){
+        let endpoint = "\(host)/users/"
+        let params : Parameters = [
+            "name": userName,
+            "description": description
+        ]
+        AF.request(endpoint, method: .post, parameters: params).validate().responseData{ response in
+            switch response.result{
+            case.success(let data):
+                let jsonDecoder = JSONDecoder()
+                if let userResponse = try? jsonDecoder.decode(User.self, from: data){
+                    completion(userResponse)
+                }else{
+                    print("Failed to decode createUser")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

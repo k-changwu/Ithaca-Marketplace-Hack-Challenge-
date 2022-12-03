@@ -2,7 +2,6 @@ from flask_sqlalchemy import SQLAlchemy
 import base64
 import boto3
 import datetime
-import io
 from io import BytesIO
 from mimetypes import guess_extension, guess_type
 import os

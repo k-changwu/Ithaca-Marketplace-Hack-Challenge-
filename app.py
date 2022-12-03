@@ -8,7 +8,6 @@ from flask import Flask
 
 import json
 from flask import request
-import os
 
 
 app = Flask(__name__)

@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         var vivianListing1 = Listing(listingName: "Apple Airpods Pro", listingDescription: "new airpods", listingPrice: 200)
         var vivianListing2 = Listing(listingName: "Nike Air Force 1", listingDescription: "brand new never worn", listingPrice: 69.9)
         vivianListing = [vivianListing1, vivianListing2]
-        let vivian = User(userName: "Vivian Zhao", userRating: 5.0, userFollowers: 420, userFollowing: 69, userImageName: "vivian", userListings: vivianListing)
+        let vivian = User(userName: "Jeff Bezos", userRating: 5.0, userFollowers: 420, userFollowing: 69, userImageName: "bezos", userListings: vivianListing)
         
         let wilsonListing: [Listing] = []
         let wilson = User(userName: "Wilson Weng", userRating: 4.9, userFollowers: 900, userFollowing: 234, userImageName: "wilson", userListings: wilsonListing)
@@ -57,6 +57,7 @@ class ViewController: UIViewController {
         //        userImageView.frame = CGRectMake(0, 0, 120, 120)
         userImageView.layer.cornerRadius = 75
         userImageView.clipsToBounds = true
+        userImageView.contentMode = .scaleAspectFill
         userImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(userImageView)
         
